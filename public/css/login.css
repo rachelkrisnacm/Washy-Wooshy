@@ -1,0 +1,175 @@
+/* =================================
+   WASHY-WOOSHY - LARAVEL BREEZE LOGIN
+================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@500;600;700;800&display=swap');
+
+:root {
+    --ww-navy: #1E3A8A;
+    --ww-royal: #3B82F6;
+    --ww-sky: #60A5FA;
+    --ww-pastel: #93C5FD;
+    --ww-ice: #BFDBFE;
+    --ww-bg: #EFF6FF;
+    --ww-bolt: #FACC15;
+}
+
+/* 1. Background halaman biru muda lembut */
+body,
+body > div {
+    background-color: var(--ww-bg) !important;
+    background-image: 
+        radial-gradient(circle at 12% 18%, rgba(191, 219, 254, 0.85) 0%, transparent 25%),
+        radial-gradient(circle at 88% 82%, rgba(147, 197, 253, 0.65) 0%, transparent 28%),
+        radial-gradient(circle at 82% 16%, rgba(250, 204, 21, 0.16) 0%, transparent 18%) !important;
+    font-family: 'Nunito', sans-serif !important;
+    color: var(--ww-navy) !important;
+}
+
+/* 2. Styling Logo Washy-Wooshy di atas kotak login */
+.ww-logo {
+    width: 190px !important;
+    height: auto !important;
+    margin: 0 auto 4px auto !important;
+    display: block !important;
+    mix-blend-mode: multiply !important; /* Hilangkan kotak putih foto agar menyatu dengan background biru */
+    transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+}
+
+.ww-logo:hover {
+    transform: scale(1.06) rotate(-2deg) !important;
+}
+
+/* 3. Hilangkan kotak pembungkus bawaan Breeze agar tidak dobel */
+div:has(> form[action$="/login"]) {
+    background: transparent !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    max-width: 430px !important;
+    width: 100% !important;
+}
+
+/* 4. Kartu Form Login Washy-Wooshy */
+form[action$="/login"] {
+    width: 100% !important;
+    padding: 34px 32px !important;
+    background-color: #FFFFFF !important;
+    border: 2.5px solid var(--ww-ice) !important;
+    border-radius: 28px !important;
+    box-shadow: 
+        0 14px 36px rgba(30, 58, 138, 0.08),
+        0 4px 0 var(--ww-pastel) !important;
+}
+
+/* 5. Label */
+form[action$="/login"] label {
+    color: var(--ww-navy) !important;
+    font-size: 14px !important;
+    font-weight: 700 !important;
+}
+
+/* 6. Input Email & Password */
+form[action$="/login"] input[type="email"],
+form[action$="/login"] input[type="password"] {
+    width: 100% !important;
+    padding: 12px 16px !important;
+    border: 2px solid var(--ww-ice) !important;
+    border-radius: 16px !important;
+    background-color: #F8FAFC !important;
+    color: var(--ww-navy) !important;
+    font-family: 'Nunito', sans-serif !important;
+    font-size: 14.5px !important;
+    font-weight: 600 !important;
+    box-shadow: none !important;
+    transition: all 0.25s ease !important;
+}
+
+form[action$="/login"] input[type="email"]:focus,
+form[action$="/login"] input[type="password"]:focus {
+    border-color: var(--ww-royal) !important;
+    background-color: #FFFFFF !important;
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.16) !important;
+    outline: none !important;
+}
+
+/* 7. Checkbox Remember Me */
+form[action$="/login"] input[type="checkbox"] {
+    width: 17px !important;
+    height: 17px !important;
+    border-radius: 6px !important;
+    border: 2px solid var(--ww-pastel) !important;
+    accent-color: var(--ww-royal) !important;
+    cursor: pointer;
+}
+
+form[action$="/login"] label[for="remember_me"] span {
+    color: var(--ww-navy) !important;
+    font-weight: 600 !important;
+}
+
+/* 8. Susunan Link Forgot Password & Tombol Log in */
+form[action$="/login"] > div:last-child {
+    display: flex !important;
+    flex-direction: column-reverse !important;
+    gap: 14px !important;
+    margin-top: 22px !important;
+}
+
+/* Link Forgot Password */
+form[action$="/login"] a {
+    color: var(--ww-royal) !important;
+    font-size: 13.5px !important;
+    font-weight: 700 !important;
+    text-decoration: none !important;
+    text-align: center !important;
+}
+
+form[action$="/login"] a:hover {
+    color: var(--ww-navy) !important;
+    text-decoration: underline !important;
+    text-decoration-color: var(--ww-bolt) !important;
+    text-decoration-thickness: 2.5px !important;
+}
+
+/* 9. Tombol Log in */
+form[action$="/login"] button[type="submit"] {
+    width: 100% !important;
+    margin-left: 0 !important;
+    justify-content: center !important;
+    padding: 13px 24px !important;
+    border: 2px solid var(--ww-navy) !important;
+    border-radius: 16px !important;
+    background: linear-gradient(180deg, var(--ww-sky) 0%, var(--ww-royal) 100%) !important;
+    color: #FFFFFF !important;
+    font-family: 'Fredoka', sans-serif !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    text-transform: none !important;
+    letter-spacing: 0.4px !important;
+    box-shadow: 0 4px 0 var(--ww-navy) !important;
+    transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+}
+
+form[action$="/login"] button[type="submit"]:hover {
+    background: linear-gradient(180deg, #7DD3FC 0%, var(--ww-sky) 100%) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 
+        0 6px 0 var(--ww-navy),
+        0 10px 20px rgba(250, 204, 21, 0.28) !important;
+}
+
+form[action$="/login"] button[type="submit"]:active {
+    transform: translateY(2px) !important;
+    box-shadow: 0 2px 0 var(--ww-navy) !important;
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    .ww-logo {
+        width: 160px !important;
+    }
+    form[action$="/login"] {
+        padding: 28px 22px !important;
+        border-radius: 22px !important;
+    }
+}
